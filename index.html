@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/3208709.png" type="image/x-icon">
+    <title>Book Mark</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body >
+
+    <main class="py-5 position-relative">
+        <div class="container d-flex flex-column justify-content-center align-items-center">
+            <h1 class="headline py-2 position-relative">bookmarker</h1>
+
+
+            <div class="bookmark-body mt-5 py-4 w-100 d-flex justify-content-center align-items-center flex-column gap-4">
+            <h2>
+                <i class="fa-solid fa-bookmark"></i>
+
+                Bookmark your favorite sites
+            
+                <i class="fa-solid fa-bookmark"></i>
+
+            </h2>
+            <div class="site-name w-100 d-flex justify-content-center flex-column">
+                <label for="bookmarkName" class="py-2 fw-semibold">
+                    <i class="fa-solid fa-book-bookmark pe-2"></i>
+                    
+                    Site Name
+                </label>
+                <input oninput="siteNameValidation()" type="text" placeholder="Bookmark Name" class="form-control" id="bookmarkName" >
+            </div>
+            <div class="site-url w-100 d-flex justify-content-center flex-column">
+                <label for="bookmarkURL" class="pb-2 fw-semibold">
+                    <i class="fa-solid fa-link pe-2"></i>
+                    Site URL
+                </label>
+                <input oninput="siteURLValidation()" type="url" placeholder="Bookmark URL" class="form-control" id="bookmarkURL" >
+            </div>
+            <button onclick="addBookmark()" class="btn btn-submit px-5" id="submitBtn" fdprocessedid="aav45i">Submit</button>
+            <button onclick="updateBookmark()"  class="btn btn-primary px-5 d-none"  fdprocessedid="aav45i" id="updateBtn">Update</button>
+            </div>
+            <h2 class="text-dark fw-bolder text-center my-3">Search Bookmark</h2>
+            <div class="form-floating mt-4 mb-2">
+                <input oninput="searchLists()"  type="search" class="form-control" id="searchName" placeholder="searchName">
+                <label class="text-secondary" for="searchName">Bookmark Name</label>
+              </div>
+            <table class="table mt-4 text-center bg-light">
+                <thead>
+                  <tr>
+                  <th class="text-capitalize">index</th>
+                  <th class="text-capitalize">Website Name</th>
+                  <th class="text-capitalize">Visit</th>
+                  <th class="text-capitalize">Delete</th>
+                  <th class="text-capitalize">Update</th>
+                  <!-- <th class="text-capitalize">Search</th> -->
+                </tr></thead>
+                <tbody id="tableContent" ></tbody>
+                 
+                </tbody>
+              </table>
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <div class="box-info d-none position-absolute start-0 end-0 top-0 w-100 h-100 d-flex justify-content-center align-items-center" id="box">
+            <div class="box-conent bg-white p-4 rounded-2 shadow-lg">
+              <header class="box-header w-100 d-flex justify-content-between align-items-center mb-4">
+                <div class="circles d-flex">
+                  <span class="rounded-circle me-2"></span>
+                  <span class="rounded-circle me-2"></span>
+                  <span class="rounded-circle me-2"></span>
+                </div>
+                <button class="btn border-0" id="closeBtn">
+                  <i class="fa-solid fa-xmark close fs-3"></i>
+                </button>
+              </header>
+              <p class="m-0 pb-2">
+                Site Name or Url is not valid, Please follow the rules below :
+              </p>
+              <ol class="rules list-unstyled m-0">
+                <li>
+                  <i class="fa-regular fa-circle-right p-2"></i>Site name must
+                  contain at least 3 characters
+                </li>
+                <li>
+                  <i class="fa-regular fa-circle-right p-2"></i>Site URL must be a
+                  valid one
+                </li>
+                <li>
+                    <i class="fa-regular fa-circle-right p-2"></i>Site URL must be start
+                    sith https:
+                  </li>
+              </ol>
+            </div>
+          </div>
+    </main>
+    
+
+
+
+
+
+
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/book.js"></script>
+</body>
+</html>
